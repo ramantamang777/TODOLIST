@@ -1,4 +1,4 @@
-*{
+ *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -76,5 +76,22 @@ li{
 }
 
 .close:hover{
-    background-color: rgb(39, 39, 39);
+    background-color: rgb(15, 15, 15);
+}
+.done{
+     position: absolute;
+     right: 410px;
+    /* top: 10px; */
+     height: 25px;
+     width: 70px;
+     margin: 0px 0px 15px 30px;
+     cursor: pointer;
+     text-align: center;
+     color: rgb(43, 42, 42);
+     border-radius: 20px;
+     background-color: rgb(231, 231, 231);
+}
+.done:hover{
+    background-color: #232324;
+    color: white;
 }
