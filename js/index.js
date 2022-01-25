@@ -12,6 +12,19 @@ for(i = 0 ; i < myList.length ; i++)
     myList[i].appendChild(span);
 }
 
+
+
+var myListDone = document.getElementsByTagName('li');
+var j;
+
+for( j = 0; j < myListDone.length ; j++)
+{
+    var span = document.createElement('span');
+    var text = document.createTextNode('Done');
+    span.className = "done";
+    span.appendChild(text);
+    myListDone[j].appendChild(span);
+}
 //for the removing items form the list
 var close = document.getElementsByClassName('close');
 var i;
@@ -24,6 +37,20 @@ for(i = 0; i < close.length ; i++)
     }
 }
 
+//for the done challenge item 
+var done = document.getElementsByClassName('done');
+
+var j;
+
+for(j = 0; j < done.length ; j++)
+{
+   done[j].onclick = function() {
+       var div = this.parentElement;
+       div.style.textDecoration = "line-through";
+       div.style.backgroundColor = "#1c1a22";
+       div.style.opacity = "0.6";
+   }
+}
 
 //to add the todoList by onclick event or function
 function add(){
@@ -48,11 +75,27 @@ function add(){
     span.appendChild(txt);
     li.appendChild(span);
 
+    var span1 = document.createElement('span');
+    var text = document.createTextNode('Done');
+    span1.className = "done";
+    span1.appendChild(text);
+    li.appendChild(span1);
+
     for(i = 0; i < close.length; i++)
     {
         close[i].onclick = function() {
             var main = this.parentElement;
             main.style.display = "none";
+        }
+    }
+
+    for( i = 0; i < done.length ; i++)
+    {
+        done[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.textDecoration = "line-through";
+            div.style.backgroundColor = "#1c1a22";
+            div.style.opacity = "0.6";
         }
     }
 
